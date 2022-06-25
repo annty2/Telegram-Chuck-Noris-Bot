@@ -1,0 +1,1 @@
+aws lambda update-function-code --function-name chuck-norris-fetcher --zip-file "fileb://index.zip" --output table
