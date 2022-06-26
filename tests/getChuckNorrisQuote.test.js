@@ -1,6 +1,6 @@
-const {getChuckNorrisQuote} = require("../commands/getChuckNorrisQuote");
-const { TELEGRAM_COMMAND_CHUCK_GET_QUOTE } = require("../telegram/commands");
-const { messages } = require("../utils/messages");
+const {getChuckNorrisQuote} = require("../src/commands/getChuckNorrisQuote");
+const { TELEGRAM_COMMAND_CHUCK_GET_QUOTE } = require("../src/telegram/commands");
+const { messages } = require("../src/utils/messages");
 
 
 describe(`Telegram command ${TELEGRAM_COMMAND_CHUCK_GET_QUOTE}: param validity > Bad Params` , () => {
@@ -15,7 +15,7 @@ describe(`Telegram command ${TELEGRAM_COMMAND_CHUCK_GET_QUOTE}: param validity >
             msg = e.message;
         }
 
-        expect(msg).toBe(messages.nanInput);
+        expect(msg).toBe(messages.inputNotNumber(mock[0]));
     });
 
     test('Invalid param: negative numbers not accepted', async () => {

@@ -7,7 +7,7 @@ function checkInputValidity (input){
     if(isNaN(numInput)){
         return {
             validity:false,
-            message:messages.nanInput
+            message:messages.inputNotNumber(input)
         };
     }
 
