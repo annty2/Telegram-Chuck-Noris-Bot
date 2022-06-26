@@ -31,6 +31,19 @@ describe(`Telegram command ${TELEGRAM_COMMAND_CHUCK_GET_QUOTE}: param validity >
         expect(msg).toBe(messages.negativeNumber);
     });
 
+    test('Invalid param: zero is not accepted', async () => {
+        const mock = ["0"];
+
+        let msg;
+        try{
+            msg = await getChuckNorrisQuote(mock);
+        } catch (e){
+            msg = e.message;
+        }
+
+        expect(msg).toBe(messages.negativeNumber);
+    });
+
     test('Invalid param: out of bounds numbers are not accepted', async () => {
         const mock = ["368"];
 
