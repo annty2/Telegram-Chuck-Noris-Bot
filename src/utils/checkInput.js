@@ -2,13 +2,6 @@ const { messages } = require("../utils/messages");
 
 function checkInputValidity (input){
 
-    // if(!input){
-    //     return {
-    //         validity:false,
-    //         message:messages.emptyInput
-    //     };
-    // }
-
     const numInput = Number(input);
 
     if(isNaN(numInput)){

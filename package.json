@@ -6,8 +6,9 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "zip": "bestzip index.zip index.js node_modules package.json src",
-    "predeploy": "yarn test && yarn run zip",
+    "test:run": "node index.js",
+    "zip": "bestzip index.zip index.js node_modules package.json .env src",
+    "predeploy": "yarn test && yarn run test:run && yarn run zip",
     "deploy": "deploy.bat",
     "postdeploy": "del index.zip"
   },
