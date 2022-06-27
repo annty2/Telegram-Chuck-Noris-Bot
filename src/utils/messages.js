@@ -2,7 +2,7 @@
 messages = {
     indexError: (index) => `Index ${index} out of bounds`,
     inputNotNumber: (input) =>`"${input}" is not a number`,
-    negativeNumber:`Number must be 1 or greater`,
+    negativeOrZeroNumber:`Number must be 1 or greater`,
     paramsError:"Invalid number of parameters",
     errorMessage: (e) =>`Oops!: ${e}`,
     randomQuote:"Here's a random quote: ",

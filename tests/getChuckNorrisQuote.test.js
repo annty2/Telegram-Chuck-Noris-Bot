@@ -28,7 +28,7 @@ describe(`Telegram command ${TELEGRAM_COMMAND_CHUCK_GET_QUOTE}: param validity >
             msg = e.message;
         }
 
-        expect(msg).toBe(messages.negativeNumber);
+        expect(msg).toBe(messages.negativeOrZeroNumber);
     });
 
     test('Invalid param: zero is not accepted', async () => {
@@ -41,7 +41,7 @@ describe(`Telegram command ${TELEGRAM_COMMAND_CHUCK_GET_QUOTE}: param validity >
             msg = e.message;
         }
 
-        expect(msg).toBe(messages.negativeNumber);
+        expect(msg).toBe(messages.negativeOrZeroNumber);
     });
 
     test('Invalid param: out of bounds numbers are not accepted', async () => {

@@ -9,8 +9,9 @@ class ChuckNorrisQuoteFetcher{
     async getQuoteByIndex (index) {
         const html = await this.fetchPage();
         const quotes = this.#extractQuotes(html);
+        const quote = quotes[index -1];
         
-        return quotes[index -1];
+        return quote?`${index}. ${quotes[index -1]}`:quote;
     }
 
     //get quote by generating a random index
@@ -19,7 +20,8 @@ class ChuckNorrisQuoteFetcher{
         const quotes = this.#extractQuotes(html);
         const index = Math.floor(Math.random() * quotes.length) + 1;
         
-        return quotes[index -1];
+        
+        return `${index}. ${quotes[index -1]}`;
     }
 
 

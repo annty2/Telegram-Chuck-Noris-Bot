@@ -1,9 +1,10 @@
 const { ChuckNorrisQuoteFetcher } = require("../ChuckNorrisQuoteFetcher/index");
-const { checkInputValidity } = require("../utils/checkInput");
+const { checkParamValidity } = require("../utils/checkParam");
 const { messages } = require("../utils/messages");
 
 async function getChuckNorrisQuote(params){
 
+    //multiple parameters check
     if (params.length > 1){
         throw new Error(messages.paramsError);
     }
@@ -12,21 +13,25 @@ async function getChuckNorrisQuote(params){
 
     const fetcher = new ChuckNorrisQuoteFetcher();
 
+    //no parameter given - generate random quote
     if (!param){
         const quote = await fetcher.getRandomQuote();
         return  messages.randomQuote + quote;
     } 
 
-    const inputValidity = checkInputValidity(param);
+    const isParamValid = checkParamValidity(param);
 
-    if (!inputValidity.validity){
-        throw new Error(inputValidity.message);
+    //parameter is invalid
+    if (!isParamValid.validity){
+        throw new Error(isParamValid.message);
     }
 
-    const index = inputValidity.message;
+    const index = isParamValid.message;
 
     const quote = await fetcher.getQuoteByIndex(index);
 
+    console.log(`quote: ${quote}`)
+    //returned empty quote - the index was too high
     if (!quote){
         throw new Error(messages.indexError(index));  
     }

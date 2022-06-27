@@ -1,9 +1,10 @@
-const { messages } = require("../utils/messages");
+const { messages } = require("./messages");
 
-function checkInputValidity (input){
+function checkParamValidity (input){
 
     const numInput = Number(input);
 
+    //not a number
     if(isNaN(numInput)){
         return {
             validity:false,
@@ -11,10 +12,11 @@ function checkInputValidity (input){
         };
     }
 
+    // 0 or less
     if(numInput < 1){
         return {
             validity:false,
-            message:messages.negativeNumber
+            message:messages.negativeOrZeroNumber
         };
     }
 
@@ -25,5 +27,5 @@ function checkInputValidity (input){
 }
 
 module.exports = {
-    checkInputValidity
+    checkParamValidity
 }
