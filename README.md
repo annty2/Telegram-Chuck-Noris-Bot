@@ -7,7 +7,7 @@ A telegram bot that scrapes [101 Chuck Norris Jokes]("https://parade.com/968666/
 1. `/help` or `/start` to get some basic instructions
 
 ## Running the bot
-Go to [Chuck Norris Bot]("http://t.me/getChuckNorrisJokeBot") and start a conversation, the bot will guide you trough the options.<br>
+Go to [Chuck Norris Bot](http://t.me/getChuckNorrisJokeBot) and start a conversation, the bot will guide you trough the options.<br>
 If the link doesn't work, search for **getCheckNorrisJokeBot** in Telegram search bar to find the bot.
 
 ## Running Locally
